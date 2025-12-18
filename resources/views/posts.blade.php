@@ -10,7 +10,7 @@
       </h2>
     </a>
     <div class="text-base text-gray-500">
-      <a href="#">{{ $post['author']}}</a> | <span>12 Desember 2022</span>
+      <a href="#">{{ $post['author']}}</a> | <span>{{ $post->created_at->format('d M Y') }}</span>
     </div>
     <p class="text-base my-4 font-light">
       {{ Str::Limit($post['body'], 120)}}

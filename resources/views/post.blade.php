@@ -7,9 +7,9 @@
       <h2 class="text-3xl font-bold mb-4 tracking-tight text-gray-900">
         {{ $post['title']}}
       </h2>
-    
+
     <div class="text-base text-gray-500">
-      <a href="#">{{ $post['author']}}</a> | <span>12 Desember 2022</span>
+      <a href="#">{{ $post['author']}}</a> | <span>{{ $post->created_at->format('d M Y') }}</span>
     </div>
     <p class="text-base my-4 font-light">
       {{ $post['body'] }}
