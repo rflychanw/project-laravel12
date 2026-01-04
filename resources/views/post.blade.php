@@ -9,7 +9,7 @@
       </h2>
 
     <div class="text-base text-gray-500">
-      <a href="#">{{ $post['author']}}</a> | <span>{{ $post->created_at->format('d M Y') }}</span>
+      <a href="/authors/{{ $post->author->id }} " class="hover:underline">{{ $post->author->name }}</a> | <span>{{ $post->created_at->format('d M Y') }}</span>
     </div>
     <p class="text-base my-4 font-light">
       {{ $post['body'] }}

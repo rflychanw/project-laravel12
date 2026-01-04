@@ -3,10 +3,21 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Arr;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Post extends Model // secara default terhubung ke tabel posts
+class Post extends Model
 {
-    // protected $table = 'blog_posts';
+    /** @use HasFactory<\Database\Factories\PostFactoryFactory> */
+    use HasFactory;
     protected $fillable = ['title', 'body', 'author', 'slug'];
+
+
+    // fungsi relasi untuk mengetahui author di dalam post dengan factory
+    public function author(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    
 }
